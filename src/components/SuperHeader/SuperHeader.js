@@ -6,6 +6,7 @@ import { COLORS } from '../../constants';
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
+import { QUERIES } from '../../constants';
 
 const SuperHeader = () => {
   return (
@@ -16,7 +17,7 @@ const SuperHeader = () => {
       <SearchInput />
       <HelpLink href="/help">Help</HelpLink>
       <UnstyledButton>
-        <Icon id="shopping-bag" strokeWidth={1} />
+        <Icon id="menu" strokeWidth={1} />
       </UnstyledButton>
     </Wrapper>
   );
@@ -32,6 +33,10 @@ const Wrapper = styled.div`
   height: 40px;
   padding-left: 32px;
   padding-right: 32px;
+  @media ${QUERIES.tabletAndBelow} {
+    display: none;
+    border-top: 2px red solid;
+  }
 `;
 
 const MarketingMessage = styled.span`
