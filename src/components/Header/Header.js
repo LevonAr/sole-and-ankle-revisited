@@ -46,7 +46,7 @@ const Header = () => {
 
 const MainHeader = styled.div`
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
@@ -65,9 +65,16 @@ const DesktopNav = styled.nav`
 `;
 
 const MobileActions = styled.nav`
-  display: flex;
+  display: none;
   @media ${QUERIES.tabletAndBelow} {
-    display: none;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+  }
+  @media ${QUERIES.mobileAndBelow} {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
   }
 `;
 
@@ -80,13 +87,6 @@ const NavLink = styled.a`
 
   &:first-of-type {
     color: ${COLORS.secondary};
-  }
-`;
-
-const SuperHeaderWrapper = styled.div`
-  @media ${QUERIES.tabletAndBelow} {
-    display: none;
-    border-top: 2px red solid;
   }
 `;
 
