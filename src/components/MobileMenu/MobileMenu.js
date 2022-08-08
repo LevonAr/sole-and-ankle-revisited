@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
       <MainColumn>
         <DismissButton>
           <button onClick={onDismiss}>
-            <Icon id="shopping-bag" strokeWidth={2} />
+            <Icon id="close" strokeWidth={2} />
           </button>
         </DismissButton>
         <MobileNav>
@@ -74,6 +74,7 @@ const MainColumn = styled.div`
 const MobileNav = styled.nav`
   display: flex;
   flex-direction: column;
+  gap: 16px;
 `;
 
 const NavLink = styled.a`
