@@ -17,6 +17,10 @@ const Header = () => {
 
   return (
     <header>
+      <MobileMenu
+        isOpen={showMobileMenu}
+        onDismiss={() => setShowMobileMenu(false)}
+      />
       <SuperHeader />
       <MainHeader>
         <Logo />
@@ -29,16 +33,11 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </DesktopNav>
         <MobileActions>
-          <Icon id="shopping-bag" strokeWidth={1} />
-          <Icon id="shopping-bag" strokeWidth={1} />
-          <Icon id="menu" strokeWidth={1} />
+          <Icon id="shopping-bag" strokeWidth={2} />
+          <Icon id="search" strokeWidth={2} />
+          <Icon id="menu" strokeWidth={2} onClick={() => setShowMobileMenu(true)} />
         </MobileActions>
       </MainHeader>
-
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-      />
     </header>
   );
 };
